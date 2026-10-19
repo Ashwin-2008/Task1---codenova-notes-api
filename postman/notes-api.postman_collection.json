@@ -1,0 +1,75 @@
+
+{
+  "info": {
+    "name": "CodeNova Notes REST API",
+    "description": "Test CRUD operations for the Notes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "noteId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get all notes",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/notes"
+      }
+    },
+    {
+      "name": "Get one note",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/notes/{{noteId}}"
+      }
+    },
+    {
+      "name": "Create note",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"My first note\",\n  \"content\": \"Testing the CodeNova API\"\n}"
+        },
+        "url": "{{baseUrl}}/notes"
+      }
+    },
+    {
+      "name": "Update note",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated note\",\n  \"content\": \"Updated content\"\n}"
+        },
+        "url": "{{baseUrl}}/notes/{{noteId}}"
+      }
+    },
+    {
+      "name": "Delete note",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/notes/{{noteId}}"
+      }
+    }
+  ]
+}
