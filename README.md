@@ -1,4 +1,4 @@
-# CodeNova Notes REST API
+# Notes REST API
 
 A RESTful API for creating, retrieving, updating, and deleting notes.
 
