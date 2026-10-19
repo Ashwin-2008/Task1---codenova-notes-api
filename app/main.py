@@ -14,7 +14,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="CodeNova Notes REST API",
+    title="Notes REST API",
     description="REST API for managing notes",
     version="1.0.0",
     lifespan=lifespan,
